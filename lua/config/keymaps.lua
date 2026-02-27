@@ -103,6 +103,14 @@ map({ "n", "v" }, "<leader>ai", "<cmd>CodeCompanionActions<cr>", { desc = "AI Ac
 map({ "n", "v" }, "<leader>c", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "AI Chat" })
 map("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { desc = "Add to AI Chat" })
 
+-- CONFORM
+vim.keymap.set("n", "<leader>f", function()
+	require("conform").format({
+		async = true,
+		lsp_fallback = true,
+	})
+end, { desc = "Format buffer (Conform)" })
+
 -- =============================================================================
 --  LSP KEYMAPS (Auto-attach)
 -- =============================================================================
